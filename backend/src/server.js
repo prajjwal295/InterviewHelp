@@ -18,9 +18,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
 
-const interviewRoutes = require("./routes/Interview");
+const apiRouter = require("./routes/apiRoutes");
 
-app.use("/api/interviews", interviewRoutes);
+app.use("/api", apiRouter);
+
 
 // default route
 app.get("/", (req, res) => {

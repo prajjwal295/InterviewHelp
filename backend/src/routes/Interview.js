@@ -4,15 +4,15 @@ const {
   createInterview,
   fetchAllInterviews,
   fetchInterviewsByUser,
-} = require("../controllers/Interview");
+} = require("../controllers/InterviewController");
 
-// Create an interview
-router.post("/create", createInterview);
+// Create a new interview (POST /interviews)
+router.post("/", createInterview);
 
-// Fetch all interviews
-router.get("/all", fetchAllInterviews);
+// Fetch all interviews (GET /interviews)
+router.get("/", fetchAllInterviews);
 
-// Fetch interviews by createdBy
-router.get("/user/:createdBy", fetchInterviewsByUser);
+// Fetch interviews filtered by `createdBy` (GET /interviews?createdBy=:createdBy)
+router.get("/", fetchInterviewsByUser);
 
 module.exports = router;

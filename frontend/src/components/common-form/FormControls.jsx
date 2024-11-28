@@ -111,14 +111,11 @@ function FormControls({
       {formControls.map((controlItem, index) => (
         <div key={index} className="form-control mt-4 xs:mt-1">
           <div className="text-left ">
-            <Label className={"xs:text-xs"} htmlFor={controlItem.name}>{controlItem.label}</Label>
+            <Label className={"xs:text-xs"} htmlFor={controlItem.name}>
+              {controlItem.label}
+            </Label>
           </div>
           {renderComponentByType(controlItem)}
-          {formErrors && formErrors[controlItem.name] && (
-            <p className={controlItem.errorClassName}>
-              {formErrors[controlItem.name]}
-            </p>
-          )}
         </div>
       ))}
     </div>

@@ -40,4 +40,18 @@ export async function checkUser(formData) {
   }
 }
 
+export async function createInterview(formData) {
+  try {
+    const { data } = await axiosInstance.post("/api/v1/interviews/create",{
+      ...formData,
+    });
+
+    return data ;
+
+  }catch(error) {
+    console.error("Error in creating interview:", error.response?.data || error.message);
+    throw error;
+  }
+}
+
 

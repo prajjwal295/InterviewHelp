@@ -48,7 +48,7 @@ export const signUpFormControls = [
       errorClassName: "text-red-500 text-sm",
     },
   ];
-  
+
   export const initialSignInFormData = {
     userEmail: "",
     password: "",
@@ -59,6 +59,68 @@ export const signUpFormControls = [
     userEmail: "",
     password: "",
   };
+
+
+  export const dialogFormControls = [
+    {
+      name: "jobRole",
+      label: "Job Role / Job Position",
+      placeholder: "Ex. Full Stack Developer",
+      type: "text",
+      componentType: "input",
+      className: "w-full sm:mt-2 xs:text-xs",
+      errorClassName: "text-red-500 text-sm",
+    },
+    {
+      name: "jobDescription",
+      label: "Job Description / Tech Stack (In Short)",
+      placeholder: "Ex. React, NodeJs",
+      type: "text",
+      componentType: "textarea", 
+      className: "w-full sm:mt-2 xs:text-xs",
+      errorClassName: "text-red-500 text-sm",
+    },
+    {
+      name: "jobExperience",
+      label: "Years of Experience",
+      placeholder: "Ex. 5",
+      type: "number",
+      componentType: "input",
+      className: "w-full sm:mt-2 xs:text-xs",
+      errorClassName: "text-red-500 text-sm",
+    },
+  ];
+  
+  export const initialDialogFormData = {
+    jobRole: "",           
+    jobDescription: "",    
+    jobExperience: "",     
+  };
+
+  export const dummyFeedback = [
+    {
+      question: "What is React?",
+      rating: 4,
+      answer: "React is a backend framework.",
+      correctanswer: "React is a JavaScript library for building user interfaces.",
+      feedback: "Your answer is partially correct but incorrect overall. React is a frontend library, not a backend framework."
+    },
+    {
+      question: "What is the purpose of useState in React?",
+      rating: 5,
+      answer: "useState is used to manage state in functional components.",
+      correctanswer: "useState is used to manage state in functional components.",
+      feedback: "Great job! Your answer is spot on."
+    },
+    {
+      question: "What is the difference between state and props in React?",
+      rating: 3,
+      answer: "State is used for styling, and props are for dynamic content.",
+      correctanswer: "State is a local component property that holds data, while props are used to pass data from parent to child components.",
+      feedback: "Your understanding needs improvement. State and props are core concepts of React, and it's essential to know their correct purpose."
+    }
+  ];
+  
   
   export const languageOptions = [
     { id: "english", label: "English" },

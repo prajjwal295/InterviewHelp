@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import FormControls from "./FormControls";
+import { LoaderCircle } from "lucide-react";
 
 function CommonForm({
   handleSubmit,
@@ -8,18 +9,38 @@ function CommonForm({
   formControls = [],
   formData,
   setFormData,
-  formErrors,
   isButtonDisabled = false,
+  loading = false,
+  onClickHandler,
 }) {
+  const handleClick = () => {
+    if (!loading && onClickHandler) {
+      onClickHandler();
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <FormControls
         formControls={formControls}
         formData={formData}
         setFormData={setFormData}
-        formErrors={formErrors}
       />
-      <Button disabled={isButtonDisabled} className="mt-4 w-full" type="submit">{buttonText || "Submit"}</Button>
+      <Button
+        disabled={isButtonDisabled || loading}
+        className="mt-4 w-full flex justify-center items-center"
+        type="submit"
+        onClick={handleClick}
+      >
+        {loading ? (
+          <>
+            <LoaderCircle className="animate-spin" size={16} />
+            <b>Generating from AI</b>
+          </>
+        ) : (
+          buttonText || "Submit"
+        )}
+      </Button>
     </form>
   );
 }

@@ -34,7 +34,6 @@ const SignIn = ({ toggleForm }) => {
           formControls={signInFormControls}
           formData={signInFormData}
           setFormData={setSignInFormData}
-          formErrors={formErrors}
           isButtonDisabled={!checkIfSignInFormIsValid()}
         />
       </div>
