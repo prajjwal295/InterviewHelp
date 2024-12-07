@@ -55,7 +55,7 @@ const AddNewInterview = () => {
             formData={dialogFormData}
             setFormData={setDialogFormData}
             loading={loading}
-            onClickHandler={redirectToInterview}
+          //  onClickHandler={redirectToInterview}
           />
         </DialogContent>
       </Dialog>

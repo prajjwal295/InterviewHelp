@@ -42,6 +42,7 @@ export async function checkUser(formData) {
 
 export async function createInterview(formData) {
   try {
+    console.log("create interview")
     const { data } = await axiosInstance.post("/api/v1/interviews/create",{
       ...formData,
     });

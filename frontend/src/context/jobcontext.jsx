@@ -1,6 +1,7 @@
 import { initialDialogFormData } from "@/config/config";
 import { createContext, useEffect, useState } from "react";
 import { chatSession } from "@/services/Gemini";
+import {createInterview} from "@/services/services"
 
 export const JobContext = createContext(null);
 
@@ -27,9 +28,10 @@ export default function JobProvider({ children }) {
         .text()
         .replace("```json", "")
         .replace("```", "");
-
+      
       const parsedResponse = JSON.parse(MockJsonResp);
       setJsonResponse(parsedResponse);
+            console.log(parsedResponse)
 
       const createInterviewResponse = await createInterview({
         jsonMockResp: parsedResponse,

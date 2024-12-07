@@ -9,7 +9,11 @@ const database = require("./config/database");
 database.dbConnect();
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://form-submission-tau.vercel.app"],
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://form-submission-tau.vercel.app",
+  ],
   credentials: true,
 };
 
@@ -20,8 +24,7 @@ app.use(cors(corsOptions));
 
 const apiRouter = require("./routes/apiRoutes");
 
-app.use("/api", apiRouter);
-
+app.use("/api/v1", apiRouter);
 
 // default route
 app.get("/", (req, res) => {

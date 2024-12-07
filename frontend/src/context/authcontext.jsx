@@ -18,6 +18,7 @@ export default function AuthProvider({ children }) {
 
   async function handleRegisterUser(event) {
     event.preventDefault();
+    console.log(signUpFormData)
     try {
       const data = await registerUser(signUpFormData);
       console.log("Registration successful:", data);
